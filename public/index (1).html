@@ -10,18 +10,18 @@
   </head>
   <body>
     <div class="container">
-      <form class="form" id="login">
+      <form class="form" id="login" action="/login" method="POST">
         <h1 class="form__title">Login</h1>
         <div class="form__message form__message--error"></div>
         <!-- Put the error/success message here. -->
         <div class="form__input-group">
-          <input type="email" class="form__input" autofocus placeholder="College email" required pattern="[a-z0-9.]+@mnnit\.ac\.in$" />
+          <input type="email" class="form__input" name="emailadd" autofocus placeholder="Email" required pattern="[a-z0-9.]+@gmail.com$" />
           <!-- <i class="bx bx-envelope" style="font-size: 20px"></i> -->
           <div class="form__input-error-message"></div>
           <!-- Put the error message here. -->
         </div>
         <div class="form__input-group">
-          <input type="password" class="form__input" autofocus placeholder="Password" required />
+          <input type="password" class="form__input" name="pass" autofocus placeholder="Password" required />
           <!-- <i class="bx bx-lock" style="font-size: 20px"></i> -->
           <div class="form__input-error-message"></div>
           <!-- Put the error message here. -->
@@ -30,9 +30,9 @@
         <p class="form__text">
           <a href="#" class="form__link form--hidden">Forgot your password?</a>
         </p>
-        <p class="form__text">
-          <a href="#" class="form__link" id="linkCreateAccount">Don't have an account? Create it now!!</a>
-        </p>
+        <!-- <p class="form__text">
+          <a href="sign_up.h" class="form__link" id="linkCreateAccount">Don't have an account? Create it now!!</a>
+        </p> -->
       </form>
 
       
