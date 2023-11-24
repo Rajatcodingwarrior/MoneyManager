@@ -1,0 +1,238 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+.navbar {
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.nav-link {
+  margin-right: 15px;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.personal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.v1 {
+  border-left: 4px solid #000;
+  height: 50px;
+  margin: 5px auto;
+}
+
+.prof {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.h {
+  margin-top: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.report {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+
+.report h2 {
+  text-align: center;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-control {
+  width: 300px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+/* Add animation properties to the navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  animation: slideInDown 0.5s ease-in-out;
+}
+
+/* Add animation properties for the sliding effect */
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Add animation properties to the navbar-brand image */
+.navbar-brand img {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add animation properties for the spinning effect */
+.navbar-brand img:hover {
+  transform: rotate(360deg);
+}
+
+/* Add animation properties to the personal section */
+.personal {
+  position: relative;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add animation properties for the fading in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add animation properties to the report section */
+.report {
+  position: relative;
+  animation: zoomIn 0.5s ease-in-out;
+}
+
+/* Add animation properties for the zoom in effect */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Add animation properties to the dropdown menu */
+.dropdown-menu {
+  animation: slideDown 0.5s ease-in-out;
+}
+
+/* Add animation properties for the sliding down effect */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Add animation properties to the footer */
+footer {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add animation properties for the fading in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideInUp 0.5s ease-in-out;
+}
+
+/* Add animation properties for the sliding up effect */
+@keyframes slideInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add animation properties to name, email, age, and gender */
+.name,
+.email,
+.age,
+.gender {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add animation properties for the fading in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
