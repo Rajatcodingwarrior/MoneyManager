@@ -14,122 +14,37 @@
 <link rel="stylesheet" href="Montserrat-Italic-VariableFont_wght.ttf">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-  body {
-overflow-x: hidden;
-}
-
-.menu {
-position: fixed;
-top: 20px;
-right: 20px;
-width: 50px;
-height: 50px;
-/* background-color: #333; */
-color: #fff;
-text-align: center;
-vertical-align: middle;
-line-height: 50px;
-cursor: pointer;
-z-index: 9999;
-}
-
-.sidebar {
-position: fixed;
-top: 0;
-right: -250px;
-width: 250px;
-height: 100%;
-background-color: #f1f1f1;
-transition: right 0.3s ease-in-out;
-}
-
-.sidebar.active {
-right: 0;
-}
-
-.sidebar ul {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-
-.sidebar ul li {
-padding: 10px;
-}
-
-.sidebar ul li a {
-text-decoration: none;
-color: #333;
-}
-
-.content {
-margin-right: 250px;
-padding: 20px;
-}
-</style>
 </head>
 <body>
-<!-- <header class="hello" >
-<div class="nav">
-    <input type="image" class="pic" src="depositphotos_646894578-stock-illustration-money-tracking-icon-payment-icon.jpg">
-    <span class="logo">
-    <input type="image" class="first" src="person-circle.svg">
-    <input type="image" class="second" src="moon.svg">
-    <input type="image" class="third" src="bell.svg">
-    <input type="image" class="fourth" src="list.svg">
-    </span>
-    </div>
- <div class="nav2">
-    <h3>Transactions</h3>
-    <h3>Friends</h3>
-    <h3>Report</h3>
-    <h3>Sign out</h3>
-</div>
-</header>
-<textarea name="exp" id="exp" cols="200" rows="3" placeholder="Category"></textarea>
- -->
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a href="home.html">
-        <img class="logo" src="depositphotos_646894578-stock-illustration-money-tracking-icon-payment-icon.jpg">
-        </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Friends</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Report</a>
-          </li>
-        </ul>
-        <span class="navbar-text">
-        
-            <a href="/report"><img class ="first" src="person-circle.svg" alt=""></a>
-            
-            <img class="second" src="moon.svg">
-            <img class="third" src="bell.svg">
-           
-            <div class="menu" onclick="toggleSidebar()">
-              <img class="fourth" src="list.svg">
-            </div>
-
-<div class="sidebar" id="sidebar">
-<ul>
-<li><a href="#"></a></li>
-
-<hr style="height:3px;color: black;">
-<li><a href="recurringbills">Recurring Bills</a></li>
-<li><a href="">Create Groups</a></li>
-<li><a href="/front">Log Out</a></li>
-</ul>
-</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="home.html">
+         <img class="logo" src="depositphotos_646894578-stock-illustration-money-tracking-icon-payment-icon.jpg">
+         </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Friends</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Report</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+                <a href="profile.html">
+                  <a href="/report"><img class ="first" src="person-circle.svg" alt=""></a>
+                
+                </a>
+                <img class="second" src="moon.svg">
+                <img class="third" src="bell.svg">
+                <img class="fourth" src="list.svg">
+              
             </span>
           </div>
         </div>
@@ -256,7 +171,15 @@ padding: 20px;
                                 <input type="submit">
                               </form>
                             </div>
-                        
+                             <form action="/report" method="POST">
+                              <input type="text" name="currency">
+                              <input type="submit" name="search">
+                            </form>
+                          
+                           <%  if(locals.value){%>
+                              <h6>1 USD equals <%=value%> <%=Curr%></h6>
+                            <%}%>
+                            
 
                         
           </div>
@@ -280,7 +203,7 @@ padding: 20px;
                 <input type="submit" value="Search">
                 <!-- <input type="text" name="stock2">
                   <input type="submit" value="Search">
-                  <input type="text" name="stock3"> 
+                  <input type="text" name="stock3">
                   <input type="submit" value="Search"> -->
               </form>
              
@@ -293,7 +216,17 @@ padding: 20px;
                 <h6>No stock available</h6>
                 <%}%>
                
+                <% if(locals.Symbol2){%>
+                  <h6><%= Symbol2 %>: <%= data2.price %></h6>
+                  <%}else{%>
+                    <h6>No stock available</h6>
+                    <%}%>
                
+                <% if(locals.Symbol3){%>
+                  <h6><%= Symbol3 %>: <%= data3.price %></h6>
+                  <%}else{%>
+                    <h6>No stock available</h6>
+                    <%}%> 
                     <table class="table">
                       <thead>
                         <tr>
@@ -320,7 +253,7 @@ padding: 20px;
                               <td><%= item.account %></td>
                               <td><%= item.date%></td>
                               
-                          </tr>
+                            </tr>
                             </form>
                           
                           
@@ -329,7 +262,7 @@ padding: 20px;
                         <%}%>
                           </tbody>
                           </table>
-                          <canvas id="myChart" style="max-width:40%;height:50px"></canvas>
+                          <canvas id="myChart"></canvas>
                           
                           <script>
                             var ctx = document.getElementById('myChart').getContext('2d');
@@ -338,10 +271,9 @@ padding: 20px;
                                 data: {
                                     labels: <%-JSON.stringify(xvalue)%>,
                                     datasets: [{
-                                     
                                         label: '# of Votes',
                                         data: <%-JSON.stringify(yvalue);%>,
-                                        backgroundColor: ["blue"
+                                        backgroundColor: [
                                             // ... rest of the code
                                         ],
                                         borderWidth: 1
@@ -387,11 +319,6 @@ padding: 20px;
                 
             </footer>
          </div>
-         <script>
-          function toggleSidebar() {
-  var sidebar = document.getElementById('sidebar');
-  sidebar.classList.toggle('active');  }
-         </script>
     
 </body>
 </html> 
