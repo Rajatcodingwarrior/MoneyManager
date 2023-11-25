@@ -1,0 +1,87 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li ,.report, .personal,footer{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+hr {
+  margin: 0rem 0;
+  color: inherit;
+  border: 0;
+  border-top: var(--bs-border-width) solid;
+  opacity: .25;
+}
+
+/* Header styles */
+.navbar {
+  background-color: #ED9ED6;
+  color: #ffede3;
+}
+
+/* Navigation link styles */
+.navbar-nav .nav-link {
+  color: #ffede3 !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f2d8c9 !important;
+}
+
+/* Logo styles */
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+/* Personal section styles */
+.personal {
+  padding: 20px;
+  /* background-color: #F1EAFF;
+  color: #273440; */
+}
+
+/* Report section styles */
+.report {
+  padding: 20px;
+  /* background-color: #E5D4FF;
+  color: #273440; */
+}
+
+/* Responsive design styles */
+@media (max-width: 768px) {
+  .navbar-nav {
+      margin-top: 10px;
+  }
+
+  .logo {
+      width: 40px;
+      height: 40px;
+  }
+}
+
+/* Animation styles */
+.prof:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+/* Add more styles and animations as needed */
+
+/* Footer styles */
+footer {
+  background-color: #1e3ac6;
+  color: #ffede3;
+  padding: 20px;
+}
+
+/* Add more styles for other sections */
+
+/* Add font imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Additional styles and animations go here */
